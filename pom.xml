@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.fasterxml.jackson</groupId>
+        <artifactId>jackson-parent</artifactId>
+        <version>2.6.1</version>
+    </parent>
+    <packaging>bundle</packaging>
+    <groupId>com.fasterxml.jackson.module</groupId>
+    <artifactId>jackson-module-osgi</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>Jackson-module-osgi</name>
+    <description>Jackson module to inject OSGI services in deserialized beans.</description>
+    <url>https://github.com/gdelafosse</url>
+
+    <issueManagement>
+        <url>https://github.com/gdelafosse/jackson-module-osgi/issues</url>
+    </issueManagement>
+    <scm>
+        <connection>scm:git:git@github.com:gdelafosse/jackson-module-osgi.git</connection>
+        <developerConnection>scm:git:git@github.com:gdelafosse/jackson-module-osgi.git</developerConnection>
+        <url>http://github.com/gdelafosse/jackson-module-osgi</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <jackson.core.version>2.6.0</jackson.core.version>
+        <osgi.core.version>5.0.0</osgi.core.version>
+        <junit.version>4.12</junit.version>
+        <mockito.version>1.10.19</mockito.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>${osgi.core.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
