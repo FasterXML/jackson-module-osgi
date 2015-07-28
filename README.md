@@ -4,7 +4,7 @@ jackson-module-osgi
 This module provides a way to inject OSGI services into deserialized objects.
 Thanks to the _JacksonInject_ annotations, the _OsgiJacksonModule_ will search for the required service in the OSGI service registry and injects it in the object while deserializing.
 
-## Example
+## Usage
 
 For example, imagine a drawing software that persists shapes in JSON documents (on file system, mongodb or orientdb). The _Shape_ object needs a _DrawingService_ that is in charge of drawing shapes.
 
@@ -39,6 +39,13 @@ To deserialize shapes and to inject the drawing service :
 	ObjectMapper mapper = new ObjectMapper();
 	mapper.registerModule(new OsgiJacksonModule(bundleContext));
 	Shape shape = mapper.reader().forType(Shape.class).readValue("{x:13,y:21}");
+
+The module supports OSGI filters to select the service more accurately :
+
+	public Shape(@JacksonInject(value = "(provider=ACME)") DrawingService drawingService)
+	{
+		this.drawingService = drawingService;
+	}
 
 ## Limitations
 * injecting value in setter is not supported
