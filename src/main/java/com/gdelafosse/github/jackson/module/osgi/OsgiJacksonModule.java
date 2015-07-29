@@ -1,13 +1,4 @@
-/*
- * Copyright (c) 2015 by Axway Software
- * All brand or product names are trademarks or registered trademarks
- * of their respective holders.
- * This document and the software described in this document are the property 
- * of Axway Software and are protected as Axway Software trade secrets.
- * No part of this work may be reproduced or disseminated in any form or 
- * by any means, without the prior written permission of Axway Software.
- */
-package com.fasterxml.jackson.module.osgi;
+package com.gdelafosse.github.jackson.module.osgi;
 
 import org.osgi.framework.BundleContext;
 
@@ -15,10 +6,18 @@ import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * A Jackson Module to inject OSGI services in deserialized objects.
+ * @see OsgiInjectableValues
+ */
 public class OsgiJacksonModule extends Module
 {
     private final BundleContext bundleContext;
     
+    /**
+     * Constructor
+     * @param bundleContext
+     */
     public OsgiJacksonModule(BundleContext bundleContext)
     {
         this.bundleContext = bundleContext;

@@ -7,7 +7,7 @@
         <version>2.6.1</version>
     </parent>
     <packaging>bundle</packaging>
-    <groupId>com.fasterxml.jackson.module</groupId>
+    <groupId>com.gdelafosse.github.jackson.module</groupId>
     <artifactId>jackson-module-osgi</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
@@ -33,11 +33,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>${jackson.core.version}</version>
-        </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>

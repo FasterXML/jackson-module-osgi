@@ -1,26 +1,29 @@
-/*
- * Copyright (c) 2015 by Axway Software
- * All brand or product names are trademarks or registered trademarks
- * of their respective holders.
- * This document and the software described in this document are the property 
- * of Axway Software and are protected as Axway Software trade secrets.
- * No part of this work may be reproduced or disseminated in any form or 
- * by any means, without the prior written permission of Axway Software.
- */
-package com.fasterxml.jackson.module.osgi;
+package com.gdelafosse.github.jackson.module.osgi;
 
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.ServiceReference;
 
+import com.fasterxml.jackson.annotation.JacksonInject;
 import com.fasterxml.jackson.databind.BeanProperty;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.InjectableValues;
 
+
+/**
+ * Injects OSGI services in deserialized objects<br>
+ * Use the {@link JacksonInject} in the constructor paramaters or the class members ask for injecting a matching OSGI services.
+ * Use the {@link JacksonInject#value()} to specify an OSGI filter to select more accurately the OSGI services.
+ * Null is injected when no matching OSGI service is registered.
+ */
 public class OsgiInjectableValues extends InjectableValues
 {
     private final BundleContext bundleContext;
     
+    /**
+     * Constructor
+     * @param bundleContext
+     */
     public OsgiInjectableValues(BundleContext bundleContext)
     {
         this.bundleContext = bundleContext;
