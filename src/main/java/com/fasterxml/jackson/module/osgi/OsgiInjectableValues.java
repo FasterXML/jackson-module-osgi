@@ -1,4 +1,4 @@
-package com.gdelafosse.github.jackson.module.osgi;
+package com.fasterxml.jackson.module.osgi;
 
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.InvalidSyntaxException;

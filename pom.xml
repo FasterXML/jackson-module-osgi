@@ -7,21 +7,21 @@
         <version>2.6.1</version>
     </parent>
     <packaging>bundle</packaging>
-    <groupId>com.gdelafosse.github.jackson.module</groupId>
+    <groupId>com.fasterxml.jackson.module</groupId>
     <artifactId>jackson-module-osgi</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <name>Jackson-module-osgi</name>
     <description>Jackson module to inject OSGI services in deserialized beans.</description>
-    <url>https://github.com/gdelafosse</url>
+    <url>https://github.com/FasterXML/jackson-module-osgi</url>
 
     <issueManagement>
-        <url>https://github.com/gdelafosse/jackson-module-osgi/issues</url>
+        <url>https://github.com/FasterXML/jackson-module-osgi/issues</url>
     </issueManagement>
     <scm>
-        <connection>scm:git:git@github.com:gdelafosse/jackson-module-osgi.git</connection>
-        <developerConnection>scm:git:git@github.com:gdelafosse/jackson-module-osgi.git</developerConnection>
-        <url>http://github.com/gdelafosse/jackson-module-osgi</url>
+        <connection>scm:git:git@github.com:FasterXML/jackson-module-osgi.git</connection>
+        <developerConnection>scm:git:git@github.com:FasterXML/jackson-module-osgi.git</developerConnection>
+        <url>http://github.com/FasterXML/jackson-module-osgi</url>
         <tag>HEAD</tag>
     </scm>
 
