@@ -18,21 +18,21 @@ interface DrawingService {
 }
 	
 class Shape implements Drawable {
-  public int x;
-  public int y;
+    public int x;
+    public int y;
 
-  private DrawingService drawingService;
+    private DrawingService drawingService;
 
-  public Shape(@JacksonInject DrawingService drawingService)
-  {
-    this.drawingService = drawingService;
-  }
+    public Shape(@JacksonInject DrawingService drawingService)
+    {
+        this.drawingService = drawingService;
+    }
 
-  @Override
-  public void draw()
-  {
-    drawingService.draw(this);
-  }
+    @Override
+    public void draw()
+    {
+        drawingService.draw(this);
+    }
 }
 ```
 
@@ -51,6 +51,7 @@ public Shape(@JacksonInject(value = "(provider=ACME)") DrawingService drawingSer
 {
     this.drawingService = drawingService;
 }
+```
 
 ## Limitations
 
