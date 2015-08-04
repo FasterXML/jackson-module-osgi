@@ -13,11 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class OsgiJacksonModule extends Module
 {
     private final BundleContext bundleContext;
-    
-    /**
-     * Constructor
-     * @param bundleContext
-     */
+
     public OsgiJacksonModule(BundleContext bundleContext)
     {
         this.bundleContext = bundleContext;
@@ -26,13 +22,13 @@ public class OsgiJacksonModule extends Module
     @Override
     public String getModuleName()
     {
-        return "osgi-module";
+        return getClass().getSimpleName();
     }
 
     @Override
     public Version version()
     {
-        return Version.unknownVersion();
+        return PackageVersion.VERSION;
     }
 
     @Override
@@ -41,5 +37,4 @@ public class OsgiJacksonModule extends Module
         ObjectMapper mapper = context.getOwner();
         mapper.setInjectableValues(new OsgiInjectableValues(bundleContext));
     }
-
 }

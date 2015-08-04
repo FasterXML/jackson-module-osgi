@@ -4,6 +4,10 @@ Project: jackson-module-osgi
 === Releases ===
 ------------------------------------------------------------------------
 
+2.6.1 (not yet released)
+
+- Fix version information generation, module version was not being exposed.
+
 2.6.0 (03-Aug-2015)
 
 The first official release!
