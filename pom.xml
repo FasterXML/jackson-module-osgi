@@ -26,10 +26,10 @@
     </scm>
 
     <properties>
-        <jackson.core.version>2.6.1</jackson.core.version>
+        <jackson.core.version>2.6.2</jackson.core.version>
         <osgi.core.version>5.0.0</osgi.core.version>
-        <junit.version>4.12</junit.version>
         <mockito.version>1.10.19</mockito.version>
+        <version.junit>4.12</version.junit>
 
         <!-- Generate PackageVersion.java into this directory. -->
         <packageVersion.dir>com/fasterxml/jackson/module/osgi</packageVersion.dir>
@@ -46,13 +46,6 @@
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
             <version>${osgi.core.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
