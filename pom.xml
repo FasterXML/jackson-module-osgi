@@ -9,7 +9,7 @@
     <packaging>bundle</packaging>
     <groupId>com.fasterxml.jackson.module</groupId>
     <artifactId>jackson-module-osgi</artifactId>
-    <version>2.6.3</version>
+    <version>2.6.4-SNAPSHOT</version>
 
     <name>Jackson-module-osgi</name>
     <description>Jackson module to inject OSGI services in deserialized beans.</description>
@@ -22,7 +22,7 @@
         <connection>scm:git:git@github.com:FasterXML/jackson-module-osgi.git</connection>
         <developerConnection>scm:git:git@github.com:FasterXML/jackson-module-osgi.git</developerConnection>
         <url>http://github.com/FasterXML/jackson-module-osgi</url>
-        <tag>jackson-module-osgi-2.6.3</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
