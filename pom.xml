@@ -4,12 +4,12 @@
     <parent>
         <groupId>com.fasterxml.jackson</groupId>
         <artifactId>jackson-parent</artifactId>
-        <version>2.6.1</version>
+        <version>2.7.0-rc1</version>
     </parent>
     <packaging>bundle</packaging>
     <groupId>com.fasterxml.jackson.module</groupId>
     <artifactId>jackson-module-osgi</artifactId>
-    <version>2.6.4-SNAPSHOT</version>
+    <version>2.7.0-rc1-SNAPSHOT</version>
 
     <name>Jackson-module-osgi</name>
     <description>Jackson module to inject OSGI services in deserialized beans.</description>
@@ -26,7 +26,7 @@
     </scm>
 
     <properties>
-        <jackson.core.version>2.6.3</jackson.core.version>
+        <jackson.core.version>2.7.0-rc1</jackson.core.version>
         <osgi.core.version>5.0.0</osgi.core.version>
         <mockito.version>1.10.19</mockito.version>
         <version.junit>4.12</version.junit>
