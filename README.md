@@ -1,6 +1,9 @@
 jackson-module-osgi
 ====================
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.fasterxml.jackson.module/jackson-module-osgi/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.fasterxml.jackson.module/jackson-module-osgi/)
+[![Javadoc](https://javadoc-emblem.rhcloud.com/doc/com.fasterxml.jackson.module/jackson-module-osgi/badge.svg)](http://www.javadoc.io/doc/com.fasterxml.jackson.module/jackson-module-osgi)
+
 This module provides a way to inject OSGI services into deserialized objects.
 Thanks to the _JacksonInject_ annotations, the _OsgiJacksonModule_ will search for the required service in the OSGI service registry and injects it in the object while deserializing.
 
@@ -57,4 +60,3 @@ public Shape(@JacksonInject(value = "(provider=ACME)") DrawingService drawingSer
 
 * injecting value in setter is not supported
 * dynamicity is not supported. If the service is unregistered, the deserialized object will keep the old service reference.
- 
