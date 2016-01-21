@@ -179,7 +179,8 @@ public class InjectOsgiServiceTest
     {
         private final NotFoundService notFoundService;
         
-        public BeanWithNotFoundService(@JacksonInject Service service, @JacksonInject NotFoundService notFoundService)
+        public BeanWithNotFoundService(@JacksonInject Service service,
+                @JacksonInject NotFoundService notFoundService)
         {
             this.service = service;
             this.notFoundService = notFoundService;

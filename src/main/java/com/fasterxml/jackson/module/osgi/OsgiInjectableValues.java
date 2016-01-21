@@ -11,30 +11,26 @@ import com.fasterxml.jackson.databind.InjectableValues;
 
 
 /**
- * Injects OSGI services in deserialized objects<br>
- * Use the {@link JacksonInject} in the constructor paramaters or the class members ask for injecting a matching OSGI services.
+ * Injects OSGI services in deserialized objects
+ * <br/>
+ * Use the {@link JacksonInject} in the constructor parameters or the class members ask for injecting a matching OSGI services.
  * Use the {@link JacksonInject#value()} to specify an OSGI filter to select more accurately the OSGI services.
  * Null is injected when no matching OSGI service is registered.
  */
 public class OsgiInjectableValues extends InjectableValues
 {
     private final BundleContext bundleContext;
-    
-    /**
-     * Constructor
-     * @param bundleContext
-     */
+
     public OsgiInjectableValues(BundleContext bundleContext)
     {
         this.bundleContext = bundleContext;
     }
     
     @Override
-    public Object findInjectableValue(Object valueId, DeserializationContext ctxt, BeanProperty forProperty, Object beanInstance)
+    public Object findInjectableValue(Object valueId,
+            DeserializationContext ctxt, BeanProperty forProperty, Object beanInstance)
     {
-        String type = serviceType(forProperty);
-        String filter = serviceFilter(valueId);
-        return findService(type, filter);
+        return findService(serviceType(forProperty), serviceFilter(valueId));
     }
 
     private Object findService(String type, String filter)
@@ -42,19 +38,13 @@ public class OsgiInjectableValues extends InjectableValues
         try
         {
             ServiceReference<?>[] srs = bundleContext.getServiceReferences(type, filter);
-            if (srs == null || srs.length == 0)
-            {
+            if (srs == null || srs.length == 0) {
                 return null;
             }
-            else
-            {
-                return bundleContext.getService(srs[0]);
-            }
-        }
-        catch (InvalidSyntaxException e)
-        {
+            return bundleContext.getService(srs[0]);
+        } catch (InvalidSyntaxException e) {
             // this will never happen as the filter was checked before
-            return null;
+            throw new RuntimeException(e);
         }
     }
 
@@ -65,12 +55,9 @@ public class OsgiInjectableValues extends InjectableValues
 
     private String serviceFilter(Object valueId)
     {
-        try
-        {
+        try {
             return bundleContext.createFilter(valueId.toString()).toString();
-        }
-        catch (InvalidSyntaxException e)
-        {
+        } catch (InvalidSyntaxException e) {
             return null;
         }
     }

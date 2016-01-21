@@ -8,6 +8,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * A Jackson Module to inject OSGI services in deserialized objects.
+ * Note that registration will replace possibly exsting value injector
+ * ({@link com.fasterxml.jackson.databind.InjectableValues}) implementation
+ * by calling {@link ObjectMapper#setInjectableValues}.
+ *
  * @see OsgiInjectableValues
  */
 public class OsgiJacksonModule extends Module
@@ -20,14 +24,12 @@ public class OsgiJacksonModule extends Module
     }
     
     @Override
-    public String getModuleName()
-    {
+    public String getModuleName() {
         return getClass().getSimpleName();
     }
 
     @Override
-    public Version version()
-    {
+    public Version version() {
         return PackageVersion.VERSION;
     }
 
