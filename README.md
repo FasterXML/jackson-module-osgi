@@ -1,5 +1,8 @@
-jackson-module-osgi
-====================
+**NOTE**: This module is being moved under [../../../jackson-base-modules] during Jackson 2.7 version.
+
+-----
+
+# jackson-module-osgi
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.fasterxml.jackson.module/jackson-module-osgi/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.fasterxml.jackson.module/jackson-module-osgi/)
 [![Javadoc](https://javadoc-emblem.rhcloud.com/doc/com.fasterxml.jackson.module/jackson-module-osgi/badge.svg)](http://www.javadoc.io/doc/com.fasterxml.jackson.module/jackson-module-osgi)
