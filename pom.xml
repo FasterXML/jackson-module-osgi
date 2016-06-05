@@ -26,7 +26,7 @@
     </scm>
 
     <properties>
-        <jackson.core.version>2.6.6</jackson.core.version>
+        <jackson.core.version>2.6.7</jackson.core.version>
         <osgi.core.version>5.0.0</osgi.core.version>
         <mockito.version>1.10.19</mockito.version>
         <version.junit>4.12</version.junit>
